@@ -1,0 +1,264 @@
+body
+{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 15px;
+	color:#FFF5F5;
+	background-color:#999999;
+}
+
+.container
+{
+	width:100%;
+	max-width: 1200px;
+	margin:0 auto;
+}
+h1,h2,h3,h4,h5,h6
+{margin: 0;}
+.intro
+{
+	width: 100%;
+	height: 100vh;
+	background:url(main_2.png) no-repeat;
+	background-size: cover;
+
+}
+.models_body
+{
+	width: 100%;
+
+	background:url(main_3.jpg) no-repeat;
+	background-size: cover;
+}
+.lk_intro
+{
+	width: 100%;
+	height: 100vh;
+	background:url(main_2.png) no-repeat;
+	background-size: cover;
+
+}
+.service_intro
+{
+	width: 100%;
+	height: 100vh;
+	background:url(main_2.png) no-repeat;
+	background-size: cover;
+
+}
+.cars_intro
+{
+	width: 100%;
+	height: 100vh;
+	background:url(main_2.png) no-repeat;
+	background-size: cover;
+
+}
+.drive_body
+{
+	width: 100%;
+	height: 70vh;
+	background:url(main_4.png) no-repeat;
+	background-size: cover;
+
+}
+.header
+{
+	padding-top: 15px;
+	width:100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+.logo
+{
+	font-size:100px;
+	font-weight:700;
+	color:white; 
+}
+
+.nav
+{
+	font-size:20px;
+	text-transform: uppercase;
+}
+
+.nav_link
+{
+	display: inline-block;
+	vertical-align: top;
+	margin:10px;
+	color:white;
+	text-decoration: none;
+	position: relative;
+
+	transition:  color .2s linear;	
+}
+.nav_link:after
+{
+	content:"";
+	display:block;
+	width: 100%;
+	height: 3px;
+	opacity: 0;
+	border-radius:5px; 
+	background-color: grey;
+	position: absolute;
+	top:100%;
+	left:0;
+	z-index: 1;
+	transition: opacity .2s linear
+}
+
+.nav_link:hover
+{
+	color:black;
+}
+.nav_link:hover:after{
+	opacity: 1;
+}
+
+.sled
+{
+	font-size: 100px;
+	padding-top: 500px;
+	text-align: center;
+	color:white;
+	
+}
+
+#f {
+  background-color:rgba(0,0,0,0.5);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.fa
+{
+	margin-left:60px;
+}
+#f i {
+  color: black;
+  font-size: 30px;
+  padding: 20px;
+}
+
+#f i:hover {
+  color: #ff7878;
+}
+.fa-instagram
+{
+	border-radius: 50px;
+	height: 70px;
+	width: 70px;
+	background:url(inst.png) no-repeat;
+	background-size: cover;
+}
+.fa-vk
+{
+	border-radius: 50px;
+	height: 70px;
+	width: 70px;
+	background:url(vk.png) no-repeat;
+	background-size: cover;
+
+}
+
+.fa-facebook
+{
+	border-radius: 50px;
+	height: 70px;
+	width: 70px;
+	background:url(facebook.png) no-repeat;
+	background-size: cover;
+}
+
+.fa-youtube
+{
+	border-radius: 50px;
+	height: 70px;
+	width: 70px;
+	background:url(youtube.png) no-repeat;
+	background-size: cover;
+}
+
+
+
+.have{
+	margin-top: 200px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 64px;
+	color:white;
+}
+.rec
+{
+	margin-right:4%;
+	margin-left:4%;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(65,105,225,0.3);
+    border-radius:20px;
+}
+.rec_min
+{
+	font-size: 25px;
+	text-align: center;
+	margin-right:4%;
+	margin-left:4%;
+    width: 200px;
+    height: 50px;
+    background-color: grey;
+    border-radius:20px;
+}
+#models_rdy
+{
+	margin-top: 40px;
+	background-color:rgba(0,0,0,0.5);
+	opacity:1.0;
+}
+.model
+{
+
+}
+.string
+{
+	margin-top:30px;
+	margin-bottom: 30px;
+}
+.name
+{
+	margin-bottom: 20px;
+}
+
+#drivers
+{
+	background:grey;
+}
+.drivers
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: rgba(255,255,0,0.4);
+	border-radius:10px;
+}
+.drive
+{
+
+}
+.dr
+{
+	font-size: 20px;
+	font-weight: 700;
+	color:#000000;
+}
+.icon
+{
+
+}
+.log_in
+{
+	padding-top: 3000px;
+	text-align: center;	
+}
