@@ -3,11 +3,11 @@
 	session_start();
 	require_once 'connect.php';
 
-	$Login=$_POST['login'];
-	$Email=$_POST['email'];
-	$FIO=$_POST['fio'];
-	$Password=$_POST['password'];
-	$Password_accept=$_POST['password_accept'];
+	$Login=@$_POST['login'] or die('pls go out');
+	$Email=@$_POST['email'] or die('pls go out');
+	$FIO=@$_POST['fio'] or die('pls go out');
+	$Password=@$_POST['password'] or die('pls go out');
+	$Password_accept=@$_POST['password_accept'] or die('pls go out');
 
 	if($Password===$Password_accept)
 	{

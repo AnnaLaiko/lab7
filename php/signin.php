@@ -1,8 +1,8 @@
 <?php 
 	session_start();
 	require_once 'connect.php';
-	$login=$_POST['username'];
-	$pass=$_POST['password'];
+	$login=@$_POST['username'];
+	$pass=@$_POST['password'] or die('pls go out');
 	if($login!=''&&$pass!='')
 	{	
 		$pass=md5($pass);
@@ -13,7 +13,9 @@
 			$_SESSION['user']=[
 				"id"=> $user['id'],
 				"name" =>$user['FIO'],
-				"email" => $user['Email'] ];
+				"email" => $user['Email'],
+				"rank" =>$user['Rank'] 
+			];
 			header('Location: ../lk.php');
 		}
 		else
