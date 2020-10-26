@@ -7,7 +7,6 @@ function clear($str, $mass_bad_word)
 {
 	mb_regex_encoding('UTF-8');
 	mb_internal_encoding("UTF-8");
-	$word_arr=preg_split('/[\ \n\,.;!?"]+/', $str);
 		foreach($mass_bad_word as $bad)
 		{
 				$word='/\b'.$bad.'\b/ui';

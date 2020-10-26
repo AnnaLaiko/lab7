@@ -1,8 +1,8 @@
 <?php 
 	session_start();
-	require_once 'connect.php';
 	require_once 'clean.php';
-	$text=$_POST['text'];
+	$text=@$_POST['text'] or die('pls go out');
+	unset($_POST['text']);
 	if($text!='')
 	{	
 		$text=clear($text, $mass_bad_word);
