@@ -1,0 +1,57 @@
+<form action="php/insert_data.php" method="POST" class="needs-validation" name="form" id="form">
+                    <div class="modal-body">
+                        <div for="login">
+                            <label class="text-center font-weight-bold" style="font-size: 30px; color:black">Логин</label>
+                            <input class="form-control" type="text" name="login" id="login" minlength="3" required placeholder="Login">
+                            <ul class="input-requirements text-danger">
+                                <li>Минимальная длинна 3 символа</li>
+                                <li>Логин может содержать только буквы и цифры (без специальных символов)</li>
+                            </ul>
+                        </div>
+
+                        <div for="email">
+                            <label class="text-center font-weight-bold" style="font-size: 30px; color:black">Почта</label>
+                            <input class="form-control" type="email" name="email" id="email" minlength="3" required placeholder="user@user.com">
+                            <ul class="input-requirements text-danger">
+                                <li>Минимальная длинна 3 символа</li>
+                                <li>Это должна быть почта</li>
+                            </ul>
+                        </div>
+
+                        <div for="fio">
+                            <label class="text-center font-weight-bold" style="font-size: 30px; color:black">ФИО</label>
+                            <input class="form-control" type="text" name="fio" id="fio" minlength="3" required placeholder="Ivanov I. I.">
+                            <ul class="input-requirements text-danger">
+                                <li>Минимальная длинна 3 символа</li>
+                                <li>Имя может содержать только буквы</li>
+                            </ul>
+                        </div>
+
+                        <div for="password">
+                            <label class="text-center font-weight-bold" style="font-size: 30px; color:black">Пароль</label>
+                            <input class="form-control" type="text" name="password" id="password" minlength="5" maxlength="100" required placeholder="Password123@">
+                            <ul class="input-requirements text-danger">
+                                <li>Минимальная длинна 5 символа</li>
+                                <li>Должен содержать >=1 цифру</li>
+                                <li>Должен содержать >=1 маленькой буквы</li>
+                                <li>Должен содержать >=1 большой буквы</li>
+                                <li>Должен содержать >=1 специальный символ</li>
+                            </ul>
+                        </div>
+
+                        <div for="rank">
+                            <label class="text-center font-weight-bold" style="font-size: 30px; color:black">Ранг</label>
+                            <input class="form-control" type="number" name="rank" id="rank" minlength="1" maxlength="2" max="10" min="0" step="1" required>
+                            <ul class="input-requirements text-danger">
+                                <li>Это должно быть целое число</li>
+                                <li>Должно быть >=0</li>
+                                <li>Должно быть <=10</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" name="add_data" id="add_data" class="btn btn-primary">Добавить</button>
+                    </div>
+                  </form>

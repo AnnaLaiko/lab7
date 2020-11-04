@@ -9,7 +9,7 @@ function clear($str, $mass_bad_word)
 	mb_internal_encoding("UTF-8");
 		foreach($mass_bad_word as $bad)
 		{
-				$word='/\b'.$bad.'\b/ui';
+				$word='/\b'. $bad . '\b/ui';
 				$str=preg_replace($word, stars($bad), $str);
 		}
 	return($str);

@@ -6,12 +6,6 @@ body
 	background-color:#999999;
 }
 
-.container
-{
-	width:100%;
-	max-width: 1200px;
-	margin:0 auto;
-}
 h1,h2,h3,h4,h5,h6
 {margin: 0;}
 .intro
@@ -271,3 +265,4 @@ h1,h2,h3,h4,h5,h6
 	padding-top: 3000px;
 	text-align: center;	
 }
+

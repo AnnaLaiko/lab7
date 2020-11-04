@@ -14,7 +14,7 @@
 				"id"=> $user['id'],
 				"name" =>$user['FIO'],
 				"email" => $user['Email'],
-				"rank" =>$user['Rank'] 
+				"rank" =>$user['Rank']
 			];
 			header('Location: ../lk.php');
 		}

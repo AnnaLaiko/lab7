@@ -4,7 +4,7 @@
 	$text=@$_POST['text'] or die('pls go out');
 	unset($_POST['text']);
 	if($text!='')
-	{	
+	{
 		$text=clear($text, $mass_bad_word);
 		$_SESSION['message']=$text;
 		header('Location: ../review.php');
