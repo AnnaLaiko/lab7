@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 26 2020 г., 22:18
+-- Время создания: Ноя 04 2020 г., 23:27
 -- Версия сервера: 10.4.14-MariaDB
 -- Версия PHP: 7.4.10
 
@@ -84,7 +84,7 @@ CREATE TABLE `users` (
   `Password` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `FIO` varchar(255) NOT NULL,
-  `Rank` int(11) DEFAULT 0
+  `Rank` tinyint(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -98,12 +98,14 @@ INSERT INTO `users` (`id`, `Login`, `Password`, `Email`, `FIO`, `Rank`) VALUES
 (11, '&lt;div&gt;????&lt;/div&gt;', '202cb962ac59075b964b07152d234b70', '213@mail.ru', '123124', 0),
 (12, '<div></div>', '202cb962ac59075b964b07152d234b70', '12345@mail.ru', 'asdg', 0),
 (13, '1235', '202cb962ac59075b964b07152d234b70', '1234@mail.ru123', '123', 0),
-(14, '12345', '202cb962ac59075b964b07152d234b70', '12345@mail.ru', '<a type=\"button\" class=\"btn btn-dark btn-lg btn-block font-weight-bold\" href=\"register.php\" style=\"margin-top:2.5vh\">??????????????????</a>', 0),
 (15, '321', '202cb962ac59075b964b07152d234b70', '321@mail.ru', '&lt;a type=&quot;button&quot; class=&quot;btn btn-dark btn-lg btn-block font-weight-bold&quot; href=&quot;register.php&quot; style=&quot;margin-top:2.5vh&quot;&gt;??????????????????&lt;/a&gt;', 0),
 (16, 'test1', '098f6bcd4621d373cade4e832627b4f6', 'test1@mail.ru', 'test1', 0),
 (17, '12344', '6c14da109e294d1e8155be8aa4b1ce8e', '12344@mail.ru', '123', 0),
 (18, '111', '698d51a19d8a121ce581499d7b701668', '111@mail.ru', '111', 0),
-(19, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@mail.ru', 'Admin A.S.', 10);
+(19, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@mail.ru', 'Admin A.S.', 10),
+(22, 'asdf', '4bf79629ef8bb2588c005aa194e5f0b3', '123456@mail.ru', 'asdf', 2),
+(23, 'Doka2', '41c08e1945d45df1018d055878e0c813', 'doka@Mail.ru', 'Pudge', 3),
+(24, 'doka3', '41c08e1945d45df1018d055878e0c813', 'doka3@Mail.ru', 'asdf', 4);
 
 --
 -- Индексы сохранённых таблиц
@@ -147,7 +149,7 @@ ALTER TABLE `phones`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
