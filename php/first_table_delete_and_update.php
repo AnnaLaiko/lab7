@@ -40,7 +40,6 @@ else if(isset($_POST['edit']))
     $email=mysqli_real_escape_string($connect,$_POST['email'.$id]);
     $fio=mysqli_real_escape_string($connect,$_POST['fio'.$id]);
     $rank=intval($_POST['rank'.$id]);
-    var_dump($rank);
     mysqli_query($connect,"UPDATE `users` SET `Email` = '$email', `FIO` = '$fio', `Rank` = '$rank' WHERE `users`.`id` = '$id'");
     header('Location: /mysite/crud.php');
 }

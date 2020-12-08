@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 04 2020 г., 23:27
+-- Время создания: Дек 08 2020 г., 23:46
 -- Версия сервера: 10.4.14-MariaDB
 -- Версия PHP: 7.4.10
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- База данных: `test`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `cars`
+--
+
+CREATE TABLE `cars` (
+  `id` int(10) NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `car` char(50) NOT NULL,
+  `price` int(15) NOT NULL DEFAULT 0,
+  `year` year(4) NOT NULL DEFAULT 2020
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `cars`
+--
+
+INSERT INTO `cars` (`id`, `user_id`, `car`, `price`, `year`) VALUES
+(1, 19, 'Lada Granta', 200000, 2020),
+(2, 1, 'Lada Granta', 1230, 2020),
+(3, 19, 'moskvich', 12345, 2001),
+(6, 19, 'KIA RIO', 800000, 2008);
 
 -- --------------------------------------------------------
 
@@ -92,24 +116,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `Login`, `Password`, `Email`, `FIO`, `Rank`) VALUES
-(1, 'test', '202cb962ac59075b964b07152d234b70', 'test@mail.ru', 'test', 1),
-(2, '123', '202cb962ac59075b964b07152d234b70', '123@mail.ru', '123', 0),
+(1, 'test', '202cb962ac59075b964b07152d234b70', 'sdf@mail.ru', 'asdfk', 1),
+(2, '123', '202cb962ac59075b964b07152d234b70', 'asdf@mail.ru', 'Ivanov i.i.', 2),
 (10, '345', 'd81f9c1be2e08964bf9f24b15f0e4900', '333@mail.ru', '345', 0),
-(11, '&lt;div&gt;????&lt;/div&gt;', '202cb962ac59075b964b07152d234b70', '213@mail.ru', '123124', 0),
-(12, '<div></div>', '202cb962ac59075b964b07152d234b70', '12345@mail.ru', 'asdg', 0),
 (13, '1235', '202cb962ac59075b964b07152d234b70', '1234@mail.ru123', '123', 0),
-(15, '321', '202cb962ac59075b964b07152d234b70', '321@mail.ru', '&lt;a type=&quot;button&quot; class=&quot;btn btn-dark btn-lg btn-block font-weight-bold&quot; href=&quot;register.php&quot; style=&quot;margin-top:2.5vh&quot;&gt;??????????????????&lt;/a&gt;', 0),
-(16, 'test1', '098f6bcd4621d373cade4e832627b4f6', 'test1@mail.ru', 'test1', 0),
-(17, '12344', '6c14da109e294d1e8155be8aa4b1ce8e', '12344@mail.ru', '123', 0),
-(18, '111', '698d51a19d8a121ce581499d7b701668', '111@mail.ru', '111', 0),
 (19, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@mail.ru', 'Admin A.S.', 10),
-(22, 'asdf', '4bf79629ef8bb2588c005aa194e5f0b3', '123456@mail.ru', 'asdf', 2),
-(23, 'Doka2', '41c08e1945d45df1018d055878e0c813', 'doka@Mail.ru', 'Pudge', 3),
-(24, 'doka3', '41c08e1945d45df1018d055878e0c813', 'doka3@Mail.ru', 'asdf', 4);
+(29, 'testDelete10', '41c08e1945d45df1018d055878e0c813', 'test10@mail.ru', 'Ivanov I.I.', 10),
+(30, 'testUpdate1', '41c08e1945d45df1018d055878e0c813', 'sadfj@mail.ru', 'Test FIO', 4);
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `cars`
+--
+ALTER TABLE `cars`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Индексы таблицы `drivers`
@@ -134,6 +158,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `cars`
+--
+ALTER TABLE `cars`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT для таблицы `drivers`
 --
 ALTER TABLE `drivers`
@@ -149,7 +179,17 @@ ALTER TABLE `phones`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `cars`
+--
+ALTER TABLE `cars`
+  ADD CONSTRAINT `cars_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
