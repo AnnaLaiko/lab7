@@ -12,13 +12,16 @@ if(!isset($_SESSION['user'])||$_SESSION['user']['rank']<2)
     <meta charset="utf-8">
     <title>Работа с БД</title>
     <!--Ссылка для бутстрапа-->
-<?php echo file_get_contents('html/head.html'); ?>
+<?php include_once 'html/head.html'; ?>
 </head>
 <body class="login drive_body bg-warning">
     <?php require_once 'php/head.php';?>
     <div style="height:30vh"></div>
     <div class="container mt-5 ">
         <div class="jumbotron bg-dark">
+            <div class="card card-body mx-5">
+                <a class="btn btn-lg btn-info font-weight-bold text-dark" href="crud_2.php">Таблица машин</a>
+            </div>
             <div class="card card-title mx-5 text-center text-dark">
                 <h2>Личные данные пользователей:</h2>
             </div>
@@ -34,19 +37,26 @@ if(!isset($_SESSION['user'])||$_SESSION['user']['rank']<2)
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <?php echo file_get_contents('html/form.html'); ?>
+                      <?php include 'html/form.html'; ?>
                     </div>
                   </div>
                 </div>
-            </div>
 
-            <div class="card card-body mx-5 text-dark">
-                <?php require_once 'php/fetch_tables.php' ?>
             </div>
+            <script src="js/script.js"></script>
+
+            <form name="form2" id="form2" method="POST" action="php/first_table_delete_and_update.php">
+                <div class="card card-body mx-5">
+                    <button type="submit" name="delete" value="true" class="btn btn-lg btn-info font-weight-bold text-dark">Удалить</button>
+                </div>
+                <div class="card card-body mx-5 text-dark">
+                    <?php require_once 'php/fetch_tables.php' ?>
+                </div>
+            </form>
 
         </div>
   </div>
 
-  <script src="js/script.js"></script>
+
 </body>
 </html>
