@@ -28,7 +28,6 @@ else if(isset($_POST['edit']))
     $model=mysqli_real_escape_string($connect,$_POST['model'.$id]);
     $price=intval($_POST['price'.$id]);
     $year=intval($_POST['year'.$id]);
-    if(!$id&&!$user_id&&!model&&!$price&&!year)
     mysqli_query($connect,"UPDATE `cars` SET `user_id` = '$user_id', `car` = '$model', `price` = '$price', `year` = '$year' WHERE `cars`.`id` = '$id'");
     header('Location: /mysite/crud_2.php');
 }
