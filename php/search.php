@@ -12,7 +12,7 @@ if(!empty($_GET['search'])) {
 		$search_result = array();
 		if (mysqli_num_rows($result_user)) {
 			while ($answer = mysqli_fetch_assoc($result_user)) {
-				if (floatval($answer['REL']) > 0.00000001) {
+				if (floatval($answer['REL']) > 0.01) {
 					$search_result[] = $answer;
 				}
 			}
@@ -23,7 +23,7 @@ if(!empty($_GET['search'])) {
 		ORDER BY REL DESC");
 		if (mysqli_num_rows($result_cars)) {
 			while ($answer = mysqli_fetch_assoc($result_cars)) {
-				if (floatval($answer['REL']) > 0.00000001) {
+				if (floatval($answer['REL']) > 0.01) {
 					$search_result[] = $answer;
 				}
 			}
