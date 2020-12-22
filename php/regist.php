@@ -42,7 +42,13 @@ if (isset($_POST['captcha'])&&isset($_COOKIE['captcha'])) {
 			header('Location: ../register.php');
 		}
 	}
+	else{
+		$_SESSION['message'] = 'Введите правильно капчу!';
+		header('Location: ../register.php');
+	}
 }
-//$_SESSION['message'] = 'Введите правильно капчу';
-//header('Location: ../register.php');
+else{
+	$_SESSION['message'] = 'Введите правильно капчу!';
+	header('Location: ../register.php');
+}
 ?>

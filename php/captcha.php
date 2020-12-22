@@ -12,7 +12,7 @@ setcookie('captcha',$cookie,$cookie_time);
 
 function img_code($code)
 {
-	$linenum = rand(3, 7);
+
 	$img_arr = array(
 		'C:\xampp\htdocs\mysite\img\1.png',
 		'C:\xampp\htdocs\mysite\img\2.png',

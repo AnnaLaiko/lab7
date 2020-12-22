@@ -1,23 +1,18 @@
 ymaps.ready(init);
 
 function init() {
-    var geolocation = ymaps.geolocation;
-    var coords = [geolocation.latitude, geolocation.longitude];
     var myMap = new ymaps.Map("map", {
 
         center: [48.644195, 44.418921],
-        // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
         zoom: 16,
         // Элементы управления
-        // https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/controls/standard-docpage/
         controls: [
-            'zoomControl', // Ползунок масштаба
+            'zoomControl',
         ]
     });
 
     // Добавление метки
-    // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
     var myPlacemark = new ymaps.Placemark([48.644195, 44.418921], {}, {
         'preset': 'islands#greenCircleDotIcon'
     });
