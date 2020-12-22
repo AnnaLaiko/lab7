@@ -17,7 +17,7 @@
 			        <div class="col-lg-1">RANK</div>
                     <div class="col-lg-1">DEL</div>
 			      </div>
-			    </div>
+              </div>
 		<?php while($users=mysqli_fetch_assoc($check_users))
         {?>
 			  <div class="container drivers">

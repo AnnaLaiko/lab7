@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 08 2020 г., 23:46
+-- Время создания: Дек 22 2020 г., 20:42
 -- Версия сервера: 10.4.14-MariaDB
 -- Версия PHP: 7.4.10
 
@@ -43,7 +43,8 @@ INSERT INTO `cars` (`id`, `user_id`, `car`, `price`, `year`) VALUES
 (1, 19, 'Lada Granta', 200000, 2020),
 (2, 1, 'Lada Granta', 1230, 2020),
 (3, 19, 'moskvich', 12345, 2001),
-(6, 19, 'KIA RIO', 800000, 2008);
+(6, 19, 'KIA RIO', 800000, 2008),
+(9, 10, 'test', 12345, 2010);
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,8 @@ INSERT INTO `users` (`id`, `Login`, `Password`, `Email`, `FIO`, `Rank`) VALUES
 (13, '1235', '202cb962ac59075b964b07152d234b70', '1234@mail.ru123', '123', 0),
 (19, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@mail.ru', 'Admin A.S.', 10),
 (29, 'testDelete10', '41c08e1945d45df1018d055878e0c813', 'test10@mail.ru', 'Ivanov I.I.', 10),
-(30, 'testUpdate1', '41c08e1945d45df1018d055878e0c813', 'sadfj@mail.ru', 'Test FIO', 4);
+(30, 'testUpdate1', '41c08e1945d45df1018d055878e0c813', 'sadfj@mail.ru', 'Test FIO', 4),
+(32, 'ivanovchik', '10ae3e895957fdb47f4a80532ef8ab57', 'ivanovchik@mail.ru', 'ivanovchik', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -134,6 +136,7 @@ INSERT INTO `users` (`id`, `Login`, `Password`, `Email`, `FIO`, `Rank`) VALUES
 ALTER TABLE `cars`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+ALTER TABLE `cars` ADD FULLTEXT KEY `car` (`car`);
 
 --
 -- Индексы таблицы `drivers`
@@ -152,6 +155,7 @@ ALTER TABLE `phones`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
+ALTER TABLE `users` ADD FULLTEXT KEY `Login` (`Login`,`Email`,`FIO`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -161,7 +165,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `drivers`
@@ -179,7 +183,7 @@ ALTER TABLE `phones`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
